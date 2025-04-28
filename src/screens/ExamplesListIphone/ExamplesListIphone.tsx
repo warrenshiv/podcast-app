@@ -3,6 +3,7 @@ import { Avatar, AvatarImage } from "../../components/ui/avatar";
 import { Card, CardContent } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
 import { Separator } from "../../components/ui/separator";
+import { Headphones, BookOpen, Film, Globe, GraduationCap, BarChart2, Radio, Search } from "lucide-react";
 
 export const ExamplesListIphone = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState<'podcasts' | 'functions'>('podcasts');
@@ -15,58 +16,63 @@ export const ExamplesListIphone = (): JSX.Element => {
     { icon: "🔍", label: "Search", active: false, color: "#8e8e93" },
   ];
 
-  // Updated podcasts to match the Figma design
+  // Updated podcasts with matching icons using Lucide components
   const podcasts = [
     { 
       title: "Top Charts", 
       image: "/api/placeholder/400/320",
       color: "#b5bd00", 
-      textColor: "white"
+      textColor: "white",
+      icon: <BarChart2 size={32} color="white" />
     },
     { 
       title: "Audiobooks", 
       image: "/api/placeholder/400/320",
       color: "#ff5a5f",
-      textColor: "white"
+      textColor: "white",
+      icon: <BookOpen size={32} color="white" />
     },
     { 
       title: "Suspense", 
       image: "/api/placeholder/400/320",
       color: "#4d47ff",
-      textColor: "white"
+      textColor: "white",
+      icon: <Radio size={32} color="white" />
     },
     { 
       title: "Film & TV Adaptations", 
       image: "/api/placeholder/400/320",
       color: "#ff6b8b",
-      textColor: "white"
+      textColor: "white",
+      icon: <Film size={32} color="white" />
     },
     { 
       title: "Web Novels", 
       image: "/api/placeholder/400/320",
       color: "#cd5dc3",
-      textColor: "white"
+      textColor: "white",
+      icon: <BookOpen size={32} color="white" />
     },
     { 
       title: "Podcasts in English", 
       image: "/api/placeholder/400/320",
       color: "#14b8a6",
       textColor: "white",
-      icon: "e"
+      icon: <Globe size={32} color="white" />
     },
     { 
       title: "Language Learning", 
       image: "/api/placeholder/400/320",
       color: "#14b8a6",
       textColor: "white",
-      icon: "A あ"
+      icon: <div className="text-white text-2xl font-bold">A あ</div>
     },
     { 
       title: "Education", 
       image: "/api/placeholder/400/320",
       color: "#14b8a6",
       textColor: "white",
-      icon: "🎓"
+      icon: <GraduationCap size={32} color="white" />
     }
   ];
 
@@ -86,7 +92,7 @@ export const ExamplesListIphone = (): JSX.Element => {
     {
       title: "Playlists",
       description: "Create and manage custom playlists",
-      icon: "📝",
+      icon: "📝",  
       color: "#45B7D1"
     },
     {
@@ -171,7 +177,7 @@ export const ExamplesListIphone = (): JSX.Element => {
               {/* Search bar */}
               <div className="flex w-[370px] items-center px-2 py-[7px] absolute top-[106px] left-[30px] bg-[#7878801f] rounded-[10px]">
                 <div className="relative w-[25px] [font-family:'Inter',Helvetica] font-normal text-[#3c3c4399] text-[17px] tracking-[0] leading-[22px]">
-                  🔍
+                  <Search size={18} className="text-gray-400" />
                 </div>
                 <Input
                   className="flex-1 h-[22px] [font-family:'Inter',Helvetica] font-normal text-[#3c3c4399] text-[17px] tracking-[-0.43px] leading-[22px] border-none bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-[#3c3c4399]"
@@ -201,21 +207,32 @@ export const ExamplesListIphone = (): JSX.Element => {
                   podcasts.map((podcast, index) => (
                     <div 
                       key={index} 
-                      className="rounded-lg overflow-hidden shadow-md"
+                      className="rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105"
                       style={{ backgroundColor: podcast.color }}
                     >
-                      <div className="p-6 h-32 flex flex-col justify-between">
-                        {podcast.icon && (
-                          <div className="text-2xl mb-2" style={{ color: podcast.textColor }}>
+                      <div className="relative h-32">
+                        {/* Semi-transparent background image */}
+                        <div 
+                          className="absolute inset-0 opacity-20"
+                          style={{ 
+                            backgroundImage: `url(${podcast.image})`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center'
+                          }}
+                        />
+                        
+                        {/* Content overlay */}
+                        <div className="relative p-6 h-full flex flex-col justify-between">
+                          <div className="text-2xl mb-2">
                             {podcast.icon}
                           </div>
-                        )}
-                        <h3 
-                          className="font-semibold text-lg" 
-                          style={{ color: podcast.textColor }}
-                        >
-                          {podcast.title}
-                        </h3>
+                          <h3 
+                            className="font-semibold text-lg" 
+                            style={{ color: podcast.textColor }}
+                          >
+                            {podcast.title}
+                          </h3>
+                        </div>
                       </div>
                     </div>
                   ))
@@ -238,7 +255,7 @@ export const ExamplesListIphone = (): JSX.Element => {
               <div className="inline-flex flex-col items-start absolute top-[57px] left-[361px]">
                 <div className="inline-flex flex-col h-[41px] items-center justify-center relative">
                   <Avatar className="w-[34px] h-[34px] rounded-[100px]">
-                    <AvatarImage src="/api/placeholder/400/320" alt="User avatar" />
+                    <AvatarImage src="/avatar.png" alt="User avatar" />
                   </Avatar>
                 </div>
               </div>
