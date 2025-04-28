@@ -1,0 +1,138 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --backgroundstertiary: rgba(255, 255, 255, 1);
+  --body-regular-font-family: "SF Pro", Helvetica;
+  --body-regular-font-size: 17px;
+  --body-regular-font-style: normal;
+  --body-regular-font-weight: 400;
+  --body-regular-letter-spacing: -0.4300000071525574px;
+  --body-regular-line-height: 22px;
+  --footnote-regular-font-family: "SF Pro", Helvetica;
+  --footnote-regular-font-size: 13px;
+  --footnote-regular-font-style: normal;
+  --footnote-regular-font-weight: 400;
+  --footnote-regular-letter-spacing: -0.07999999821186066px;
+  --footnote-regular-line-height: 18px;
+  --material-blur: ;
+  --regular-15pt-font-family: "SF Pro", Helvetica;
+  --regular-15pt-font-size: 15px;
+  --regular-15pt-font-style: normal;
+  --regular-15pt-font-weight: 400;
+  --regular-15pt-letter-spacing: -0.23000000417232513px;
+  --regular-15pt-line-height: 20px;
+  --semibold-10pt-font-family: "SF Pro", Helvetica;
+  --semibold-10pt-font-size: 10px;
+  --semibold-10pt-font-style: normal;
+  --semibold-10pt-font-weight: 400;
+  --semibold-10pt-letter-spacing: 0.11999999731779099px;
+  --semibold-10pt-line-height: 12px;
+  --semibold-20pt-font-family: "SF Pro", Helvetica;
+  --semibold-20pt-font-size: 20px;
+  --semibold-20pt-font-style: normal;
+  --semibold-20pt-font-weight: 400;
+  --semibold-20pt-letter-spacing: -0.44999998807907104px;
+  --semibold-20pt-line-height: 25px;
+  --semibold-21pt-font-family: "SF Pro", Helvetica;
+  --semibold-21pt-font-size: 21px;
+  --semibold-21pt-font-style: normal;
+  --semibold-21pt-font-weight: 400;
+  --semibold-21pt-letter-spacing: -0.36000001430511475px;
+  --semibold-21pt-line-height: 27px;
+  --semibold-23pt-font-family: "SF Pro", Helvetica;
+  --semibold-23pt-font-size: 23px;
+  --semibold-23pt-font-style: normal;
+  --semibold-23pt-font-weight: 400;
+  --semibold-23pt-letter-spacing: -0.10000000149011612px;
+  --semibold-23pt-line-height: 29px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
